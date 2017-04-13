@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e6ab29</color>
+    <color name="colorPrimaryDark">#d1940d</color>
+    <color name="colorPrimaryLight">#f3d38c</color>
+    <color name="colorAccent">#e6ab29</color>
+
+    <!-- 黑色字体颜色 -->
+    <color name="font_color_dark">#000000</color>
+    <!-- 黑灰色字体颜色 -->
+    <color name="font_color_black">#444444</color>
+    <!-- 灰色字体颜色 -->
+    <color name="font_color_gray">#9A9A9A</color>
+</resources>

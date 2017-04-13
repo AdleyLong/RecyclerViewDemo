@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <!--返回或更多(app:showAsAction="never")的按钮颜色-->
+        <item name="colorControlNormal">@android:color/white</item>
+        <!--菜单字体颜色-->
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+</resources>
