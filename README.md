@@ -1,4 +1,4 @@
->RecyclerView 是Android L版本中新添加的一个用来取代ListView和GridView的控件，它的灵活性与可替代性比listview更好。android系统源码里面也已经开始使用了，比如Launcher界面，比如Message界面等。接下来通过一系列的文章讲解如何使用RecyclerView,彻底抛弃ListView和GridView.
+>RecyclerView 是Android L版本中新添加的一个用来取代ListView和GridView的控件，它的灵活性与可替代性比listview更好。android系统源码里面也已经开始使用了，比如Launcher界面，比如Message界面等。接下来通过下面的文章讲解如何使用RecyclerView,为啥可以抛弃ListView和GridView，后面，还会分析下腾讯首页是如何实现的。
 
 # 一、简介
 
@@ -142,7 +142,7 @@ switch (type) {
                         (mLayoutInflater.inflate(R.layout.fragment_home_ad, parent, false));
         }
 ```
-具体可以参考demo里面的TecentAdapter这个类。
+具体可以参考demo里面的TecentAdapter这个类，腾讯首页这个页面，按照类型来分，可以分为banner、三方应用、大图、列表、广告这5块。
 
 # 四、点击事件
 RecyclerView不比ListView，ListView直接有onItemClick的监听事件，但是RecyclerView是需要自己写的。
