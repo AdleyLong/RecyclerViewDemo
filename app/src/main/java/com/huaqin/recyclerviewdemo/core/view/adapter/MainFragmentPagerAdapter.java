@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class MainFragmentPagerAdapter extends FragmentPagerAdapter {
     private Context mContext;
-    private String tabTitles[] = new String[]{"腾讯视频","垂直", "网格", "瀑布流", "带刷新的" };
+    private String tabTitles[] = new String[]{"腾讯视频","垂直","水平", "网格", "瀑布流", "带刷新的" };
 
     public MainFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);

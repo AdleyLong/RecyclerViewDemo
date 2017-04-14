@@ -27,12 +27,15 @@ public class FragmentFactory {
                 fragment = NewsFragment.newInstance();
                 break;
             case 2:
-                fragment = GridFragment.newInstance();
+                fragment = NewsHorFragment.newInstance();
                 break;
             case 3:
-                fragment = StaggeredDemoFragment.newInstance();
+                fragment = GridFragment.newInstance();
                 break;
             case 4:
+                fragment = StaggeredDemoFragment.newInstance();
+                break;
+            case 5:
                 fragment = PullLoadFragment.newInstance();
                 break;
         }

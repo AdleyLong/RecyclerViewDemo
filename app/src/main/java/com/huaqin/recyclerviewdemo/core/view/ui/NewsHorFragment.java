@@ -81,7 +81,9 @@ public class NewsHorFragment extends BaseFragment implements NewsContract.View {
 
     private void initView() {
         mAdapter = new NewsAdapter(mContext, mList);
-        mRecyclerview.setLayoutManager(new LinearLayoutManager(mContext));
+        LinearLayoutManager manager = new LinearLayoutManager(mContext);
+        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        mRecyclerview.setLayoutManager(manager);
         mRecyclerview.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new NewsAdapter.OnRecyclerViewItemClickListener() {
             @Override
