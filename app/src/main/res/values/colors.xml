@@ -11,4 +11,8 @@
     <color name="font_color_black">#444444</color>
     <!-- 灰色字体颜色 -->
     <color name="font_color_gray">#9A9A9A</color>
+
+    <color name="gray_bg">#F2F2F2</color>
+    <!-- 白色 -->
+    <color name="white">#FFFFFF</color>
 </resources>

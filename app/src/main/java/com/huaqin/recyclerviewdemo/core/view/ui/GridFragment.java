@@ -4,21 +4,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.huaqin.recyclerviewdemo.BaseFragment;
 import com.huaqin.recyclerviewdemo.R;
 import com.huaqin.recyclerviewdemo.core.bean.NewsItem;
 import com.huaqin.recyclerviewdemo.core.contract.NewsContract;
 import com.huaqin.recyclerviewdemo.core.presenter.NewsPresenter;
-import com.huaqin.recyclerviewdemo.core.view.adapter.NewsAdapter;
 import com.huaqin.recyclerviewdemo.core.view.adapter.NewsGridAdapter;
 
 import java.util.ArrayList;
@@ -37,6 +34,8 @@ public class GridFragment extends BaseFragment implements NewsContract.View {
     Unbinder unbinder;
     @BindView(R.id.movie_recyclerview)
     RecyclerView mRecyclerview;
+    @BindView(R.id.progressbar)
+    ProgressBar progressbar;
     private NewsGridAdapter mAdapter;
     private Context mContext;
     private final List<NewsItem> mList = new ArrayList<>();
@@ -66,6 +65,9 @@ public class GridFragment extends BaseFragment implements NewsContract.View {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        mRecyclerview.setVisibility(View.GONE);
+        progressbar.setVisibility(View.VISIBLE);
 
         mPresenter = new NewsPresenter(this);
         mPresenter.getData(getActivity());
@@ -98,11 +100,14 @@ public class GridFragment extends BaseFragment implements NewsContract.View {
     public void onSuccess(List<NewsItem> list) {
         mList.clear();
         mList.addAll(list);
+        mRecyclerview.setVisibility(View.VISIBLE);
+        progressbar.setVisibility(View.GONE);
         initView();
     }
 
     @Override
     public void onFailure(String error) {
+        progressbar.setVisibility(View.GONE);
         showToast(error);
     }
 }

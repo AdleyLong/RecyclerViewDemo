@@ -4,14 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.ProgressBar;
 
 import com.huaqin.recyclerviewdemo.BaseFragment;
 import com.huaqin.recyclerviewdemo.R;
@@ -38,6 +37,9 @@ public class NewsFragment extends BaseFragment implements NewsContract.View {
 
     private static NewsFragment fragment = null;
     Unbinder unbinder;
+    @BindView(R.id.progressbar)
+    ProgressBar progressbar;
+
     private Context mContext;
     private final List<NewsItem> mList = new ArrayList<>();
     private NewsPresenter mPresenter;
@@ -68,8 +70,13 @@ public class NewsFragment extends BaseFragment implements NewsContract.View {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //先显示加载框
+        mRecyclerview.setVisibility(View.GONE);
+        progressbar.setVisibility(View.VISIBLE);
         mPresenter = new NewsPresenter(this);
         mPresenter.getData(getActivity());
+
+
     }
 
     private void initView() {
@@ -80,11 +87,11 @@ public class NewsFragment extends BaseFragment implements NewsContract.View {
             @Override
             public void onItemClick(View view, int position) {
                 String url = mList.get(position).getUrl();
-                if(TextUtils.isEmpty(url)){
-                    showToast("第一条无法点击");
-                }else{
-                    Intent intent = new Intent(getActivity(),WebActivity.class);
-                    intent.putExtra("url",url);
+                if (TextUtils.isEmpty(url)) {
+                    showToast("除了第一条都可以点击");
+                } else {
+                    Intent intent = new Intent(getActivity(), WebActivity.class);
+                    intent.putExtra("url", url);
                     mContext.startActivity(intent);
                 }
             }
@@ -101,11 +108,14 @@ public class NewsFragment extends BaseFragment implements NewsContract.View {
     public void onSuccess(List<NewsItem> list) {
         mList.clear();
         mList.addAll(list);
+        mRecyclerview.setVisibility(View.VISIBLE);
+        progressbar.setVisibility(View.GONE);
         initView();
     }
 
     @Override
     public void onFailure(String error) {
+        progressbar.setVisibility(View.GONE);
         showToast(error);
     }
 }

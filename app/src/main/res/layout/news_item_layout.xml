@@ -24,6 +24,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
             android:layout_margin="10dp"
             android:background="@null" />
 

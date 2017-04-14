@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray_bg"
+    android:orientation="vertical">
+
+
+    <com.huaqin.recyclerviewdemo.widget.NoScrollGridView
+        android:id="@+id/third_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:horizontalSpacing="15dp"
+        android:numColumns="4"
+        android:verticalSpacing="15dp"
+        android:background="@color/white"/>
+
+</LinearLayout>

@@ -21,19 +21,19 @@ public class FragmentFactory {
         Fragment fragment = null;
         switch (i) {
             case 0:
-                fragment = NewsFragment.newInstance();
+                fragment = TencentFragment.newInstance();
                 break;
             case 1:
-                fragment = GridFragment.newInstance();
+                fragment = NewsFragment.newInstance();
                 break;
             case 2:
-                fragment = StaggeredDemoFragment.newInstance();
+                fragment = GridFragment.newInstance();
                 break;
             case 3:
-                fragment = PullLoadFragment.newInstance();
+                fragment = StaggeredDemoFragment.newInstance();
                 break;
             case 4:
-                fragment = TencentFragment.newInstance();
+                fragment = PullLoadFragment.newInstance();
                 break;
         }
         return fragment;

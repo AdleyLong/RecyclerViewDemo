@@ -25,7 +25,7 @@ public class WelcomeActivity extends BaseActivity {
                 WelcomeActivity.this.startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
                 WelcomeActivity.this.finish();
             }
-        }, 3 * 1000);
+        }, 1 * 1000);
     }
 
 }

@@ -41,4 +41,6 @@ dependencies {
     compile 'com.jcodecraeer:xrecyclerview:1.2.8'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.youth.banner:banner:1.4.8'
+
 }

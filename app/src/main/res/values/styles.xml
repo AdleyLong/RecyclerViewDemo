@@ -13,4 +13,22 @@
         <item name="actionMenuTextColor">@android:color/white</item>
     </style>
 
+
+    <style name="main_title_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/font_color_black</item>
+    </style>
+
+    <style name="sub_title_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/font_color_gray</item>
+    </style>
 </resources>
