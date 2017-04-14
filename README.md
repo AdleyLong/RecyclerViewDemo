@@ -200,4 +200,4 @@ mAdapter.setOnItemClickListener(new NewsAdapter.OnRecyclerViewItemClickListener(
 
 [RecyclerView的插入和删除](http://blog.csdn.net/picasso_l/article/details/51691629)
 
-大家有兴趣可以看一下
+大家有兴趣可以看一下，另外，编译好的app就在更目录下，app-debug.apk，把代码拉下来直接安装apk就能看到演示。
